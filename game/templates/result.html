@@ -6,12 +6,15 @@
 <head>
 
     <title>Game Result</title>
-<link
-    rel="icon"
 
-    type="image/png"
+    <!-- Favicon -->
 
-    href="{% static 'images/favicon.png' %}">
+    <link
+        rel="icon"
+        type="image/png"
+        href="{% static 'images/favicon.png' %}">
+
+    <!-- Tailwind -->
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -47,173 +50,189 @@
 
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-950 text-white flex items-center justify-center p-6 md:p-8">
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-950 text-white flex flex-col">
 
-    <div class="w-full max-w-4xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-12 text-center">
+    <!-- Main Center Area -->
 
-        <!-- Win / Lose Banner -->
+    <div class="flex-grow flex items-center justify-center p-6 md:p-8">
 
-        {% if won %}
+        <!-- Result Card -->
 
-        <h1 class="text-4xl md:text-7xl font-extrabold text-green-400 mb-12">
+        <div class="w-full max-w-4xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-12 text-center">
 
-            🎉 YOU WON
+            <!-- Win / Lose Banner -->
 
-        </h1>
+            {% if won %}
 
-        {% else %}
+            <h1 class="text-4xl md:text-7xl font-extrabold text-green-400 mb-12">
 
-        <h1 class="text-4xl md:text-7xl font-extrabold text-red-400 mb-12 shake">
+                🎉 YOU WON
 
-            💀 YOU LOST
+            </h1>
 
-        </h1>
+            {% else %}
 
-        {% endif %}
+            <h1 class="text-4xl md:text-7xl font-extrabold text-red-400 mb-12 shake">
 
-        <!-- Animal Section -->
+                💀 YOU LOST
 
-        {% if not won %}
-
-        <div class="bg-slate-800 rounded-3xl p-8 shadow-xl mb-10">
-
-            <h2 class="text-2xl md:text-3xl text-slate-300">
-
-                Hidden Animal
-
-            </h2>
-
-            <p class="text-4xl md:text-6xl font-bold text-yellow-300 mt-5">
-
-                {{ animal }}
-
-            </p>
-
-            <!-- Animal Image -->
-
-            {% if image_url %}
-
-            <img
-                src="{{ image_url }}"
-
-                class="w-full md:h-[450px] h-[300px]
-                       object-cover rounded-3xl shadow-2xl mt-10
-                       transition duration-700">
+            </h1>
 
             {% endif %}
 
-        </div>
+            <!-- Animal Section -->
 
-        {% endif %}
+            {% if not won %}
 
-        <!-- Final Score -->
+            <div class="bg-slate-800 rounded-3xl p-8 shadow-xl mb-10">
 
-        <div class="bg-slate-800 rounded-3xl p-8 shadow-xl mb-10">
+                <h2 class="text-2xl md:text-3xl text-slate-300">
 
-            <h2 class="text-2xl md:text-3xl text-slate-300">
+                    Hidden Animal
 
-                Final Score
+                </h2>
 
-            </h2>
+                <p class="text-4xl md:text-6xl font-bold text-yellow-300 mt-5">
 
-            <p class="text-5xl md:text-7xl font-extrabold text-green-400 mt-5">
+                    {{ animal }}
 
-                {{ score }}%
+                </p>
 
-            </p>
+                <!-- Animal Image -->
 
-            <p class="text-xl md:text-2xl text-slate-300 mt-5">
+                {% if image_url %}
 
-                Difficulty:
-                {{ level }}
+                <img
+                    src="{{ image_url }}"
 
-            </p>
+                    class="w-full md:h-[450px] h-[300px]
+                           object-cover rounded-3xl shadow-2xl mt-10
+                           transition duration-700">
 
-        </div>
+                {% else %}
 
-        <!-- Statistics -->
+                <div class="mt-10 text-slate-400 text-2xl">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    No Image Available
 
-            <!-- Questions -->
+                </div>
 
-            <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+                {% endif %}
 
-                <h3 class="text-xl md:text-2xl text-slate-300">
+            </div>
 
-                    Questions Used
+            {% endif %}
 
-                </h3>
+            <!-- Final Score -->
 
-                <p class="text-3xl md:text-5xl font-bold text-blue-400 mt-5">
+            <div class="bg-slate-800 rounded-3xl p-8 shadow-xl mb-10">
 
-                    {{ questions_used }}
+                <h2 class="text-2xl md:text-3xl text-slate-300">
+
+                    Final Score
+
+                </h2>
+
+                <p class="text-5xl md:text-7xl font-extrabold text-green-400 mt-5">
+
+                    {{ score }}%
+
+                </p>
+
+                <p class="text-xl md:text-2xl text-slate-300 mt-5">
+
+                    Difficulty:
+                    {{ level }}
 
                 </p>
 
             </div>
 
-            <!-- Wrong Guesses -->
+            <!-- Statistics -->
 
-            <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
 
-                <h3 class="text-xl md:text-2xl text-slate-300">
+                <!-- Questions -->
 
-                    Wrong Guesses
+                <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
 
-                </h3>
+                    <h3 class="text-xl md:text-2xl text-slate-300">
 
-                <p class="text-3xl md:text-5xl font-bold text-red-400 mt-5">
+                        Questions Used
 
-                    {{ wrong_guesses }}
+                    </h3>
 
-                </p>
+                    <p class="text-3xl md:text-5xl font-bold text-blue-400 mt-5">
+
+                        {{ questions_used }}
+
+                    </p>
+
+                </div>
+
+                <!-- Wrong Guesses -->
+
+                <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+
+                    <h3 class="text-xl md:text-2xl text-slate-300">
+
+                        Wrong Guesses
+
+                    </h3>
+
+                    <p class="text-3xl md:text-5xl font-bold text-red-400 mt-5">
+
+                        {{ wrong_guesses }}
+
+                    </p>
+
+                </div>
+
+                <!-- AI Cost -->
+
+                <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+
+                    <h3 class="text-xl md:text-2xl text-slate-300">
+
+                        AI Cost
+
+                    </h3>
+
+                    <p class="text-3xl md:text-5xl font-bold text-green-400 mt-5 break-words">
+
+                        ₹{{ cost }}
+
+                    </p>
+
+                </div>
 
             </div>
 
-            <!-- AI Cost -->
+            <!-- Buttons -->
 
-            <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+            <div class="flex flex-wrap justify-center gap-8">
 
-                <h3 class="text-xl md:text-2xl text-slate-300">
+                <!-- New Game -->
 
-                    AI Cost
+                <a href="/profile/"
 
-                </h3>
+                   class="px-10 md:px-12 py-4 md:py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl hover:scale-105">
 
-                <p class="text-3xl md:text-5xl font-bold text-green-400 mt-5 break-words">
+                    New Game
 
-                    ₹{{ cost }}
+                </a>
 
-                </p>
+                <!-- Dashboard -->
+
+                <a href="/profile/"
+
+                   class="px-10 md:px-12 py-4 md:py-5 bg-blue-500 hover:bg-blue-400 text-white text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl hover:scale-105">
+
+                    Dashboard
+
+                </a>
 
             </div>
-
-        </div>
-
-        <!-- Buttons -->
-
-        <div class="flex flex-wrap justify-center gap-8">
-
-            <!-- New Game -->
-
-            <a href="/profile/"
-
-               class="px-10 md:px-12 py-4 md:py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl hover:scale-105">
-
-                New Game
-
-            </a>
-
-            <!-- Dashboard -->
-
-            <a href="/profile/"
-
-               class="px-10 md:px-12 py-4 md:py-5 bg-blue-500 hover:bg-blue-400 text-white text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl hover:scale-105">
-
-                Dashboard
-
-            </a>
 
         </div>
 
@@ -264,29 +283,32 @@
     </script>
 
     {% endif %}
-<footer class="mt-16 text-center text-slate-400 text-sm md:text-base pb-6">
 
-    <div class="border-t border-white/10 pt-6">
+    <!-- Footer -->
 
-        <p>
+    <footer class="text-center text-slate-400 text-sm md:text-base pb-6 px-4">
 
-            © 2026 Abinav Balasubbiramaniam.
-            All rights reserved.
+        <div class="border-t border-white/10 pt-6">
 
-        </p>
+            <p>
 
-        <p class="mt-3 leading-relaxed max-w-4xl mx-auto px-4">
+                © 2026 Abinav Balasubbiramaniam.
+                All rights reserved.
 
-            Animal images are dynamically sourced from publicly available
-            Wikimedia/Wikipedia resources for educational and gameplay purposes.
-            This website is an independent AI-powered game project and is not
-            affiliated with Wikimedia Foundation or any external organizations.
+            </p>
 
-        </p>
+            <p class="mt-3 leading-relaxed max-w-4xl mx-auto">
 
-    </div>
+                Animal images are dynamically sourced from publicly available
+                Wikimedia/Wikipedia resources for educational and gameplay purposes.
+                This website is an independent AI-powered game project and is not
+                affiliated with Wikimedia Foundation or any external organizations.
 
-</footer>
+            </p>
+
+        </div>
+
+    </footer>
 
 </body>
 

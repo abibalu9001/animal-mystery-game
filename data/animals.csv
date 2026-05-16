@@ -1,0 +1,843 @@
+animal,level
+anaconda,Beginner
+ant,Beginner
+bat,Beginner
+bear,Beginner
+bee,Beginner
+beetle,Beginner
+bison,Beginner
+blue whale,Beginner
+boar,Beginner
+buffalo,Beginner
+butterfly,Beginner
+camel,Beginner
+cat,Beginner
+catfish,Beginner
+centipede,Beginner
+chameleon,Beginner
+cheetah,Beginner
+chicken,Beginner
+chimpanzee,Beginner
+cobra,Beginner
+cockroach,Beginner
+cow,Beginner
+crab,Beginner
+crane,Beginner
+crocodile,Beginner
+crow,Beginner
+cuckoo,Beginner
+deer,Beginner
+dog,Beginner
+dolphin,Beginner
+donkey,Beginner
+dragonfly,Beginner
+duck,Beginner
+eagle,Beginner
+earthworm,Beginner
+eel,Beginner
+elephant,Beginner
+emu,Beginner
+firefly,Beginner
+fish,Beginner
+flamingo,Beginner
+fox,Beginner
+frog,Beginner
+giraffe,Beginner
+goat,Beginner
+goldfish,Beginner
+gorilla,Beginner
+grasshopper,Beginner
+hamster,Beginner
+hippopotamus,Beginner
+horse,Beginner
+housefly,Beginner
+hummingbird,Beginner
+hyena,Beginner
+jaguar,Beginner
+jellyfish,Beginner
+kangaroo,Beginner
+kingfisher,Beginner
+kiwi,Beginner
+koala,Beginner
+leopard,Beginner
+lion,Beginner
+lizard,Beginner
+lovebird,Beginner
+mantis,Beginner
+mongoose,Beginner
+monkey,Beginner
+mosquito,Beginner
+mussel,Beginner
+myna,Beginner
+octopus,Beginner
+orangutan,Beginner
+ostrich,Beginner
+owl,Beginner
+panda,Beginner
+panther,Beginner
+parrot,Beginner
+peacock,Beginner
+penguin,Beginner
+pig,Beginner
+pigeon,Beginner
+piranha,Beginner
+platypus,Beginner
+prawn,Beginner
+python,Beginner
+rabbit,Beginner
+rat,Beginner
+raven,Beginner
+rhinoceros,Beginner
+scorpion,Beginner
+seahorse,Beginner
+shark,Beginner
+sheep,Beginner
+silkworm,Beginner
+snail,Beginner
+snake,Beginner
+snow leopard,Beginner
+sparrow,Beginner
+spider,Beginner
+squid,Beginner
+squirrel,Beginner
+starfish,Beginner
+stick insect,Beginner
+swan,Beginner
+swordfish,Beginner
+tiger,Beginner
+tortoise,Beginner
+turkey,Beginner
+vulture,Beginner
+wasp,Beginner
+whale,Beginner
+wolf,Beginner
+woodpecker,Beginner
+worm,Beginner
+yak,Beginner
+zebra,Beginner
+albatross,Easy
+alligator,Easy
+alpaca,Easy
+anemone,Easy
+angelfish,Easy
+anglerfish,Easy
+anteater,Easy
+antelope,Easy
+arctic fox,Easy
+armadillo,Easy
+arowana,Easy
+axolotl,Easy
+baboon,Easy
+badger,Easy
+beaver,Easy
+bed bug,Easy
+beluga,Easy
+betta fish,Easy
+black bear,Easy
+blackbuck,Easy
+brain coral,Easy
+brown bear,Easy
+budgerigar,Easy
+bull shark,Easy
+bullfrog,Easy
+cape buffalo,Easy
+capybara,Easy
+cassowary,Easy
+catla,Easy
+chipmunk,Easy
+chital,Easy
+clownfish,Easy
+coral,Easy
+cougar,Easy
+crayfish,Easy
+cricket,Easy
+cuttlefish,Easy
+dingo,Easy
+dodo,Easy
+dogfish,Easy
+dugong,Easy
+dung beetle,Easy
+echidna,Easy
+egret,Easy
+elk,Easy
+falcon,Easy
+finch,Easy
+flea,Easy
+flying fish,Easy
+flying lizard,Easy
+flying squirrel,Easy
+frilled lizard,Easy
+gerbil,Easy
+goldfinch,Easy
+goose,Easy
+great white shark,Easy
+green snake,Easy
+grizzly bear,Easy
+guinea pig,Easy
+guppy,Easy
+hammerhead shark,Easy
+hare,Easy
+hawk,Easy
+hedgehog,Easy
+heron,Easy
+hoopoe,Easy
+hornbill,Easy
+horned lizard,Easy
+hornet,Easy
+horseshoe crab,Easy
+iguana,Easy
+jackal,Easy
+jackrabbit,Easy
+kangaroo rat,Easy
+killer whale,Easy
+koi,Easy
+komodo dragon,Easy
+kudu,Easy
+ladybug,Easy
+langur,Easy
+leaf insect,Easy
+leatherback turtle,Easy
+leech,Easy
+lemur,Easy
+lionfish,Easy
+llama,Easy
+lobster,Easy
+locust,Easy
+loris,Easy
+louse,Easy
+lungfish,Easy
+lynx,Easy
+macaw,Easy
+mamba,Easy
+manatee,Easy
+mandrill,Easy
+mantis shrimp,Easy
+marlin,Easy
+marmoset,Easy
+mayfly,Easy
+meerkat,Easy
+millipede,Easy
+mite,Easy
+mole,Easy
+molly,Easy
+monitor lizard,Easy
+moose,Easy
+moth,Easy
+mouse,Easy
+mouse deer,Easy
+mudskipper,Easy
+mule,Easy
+mule deer,Easy
+muskox,Easy
+okapi,Easy
+opossum,Easy
+otter,Easy
+oyster,Easy
+pangolin,Easy
+passenger pigeon,Easy
+pelican,Easy
+pheasant,Easy
+planarian,Easy
+polar bear,Easy
+porpoise,Easy
+portuguese man of war,Easy
+quail,Easy
+raccoon,Easy
+ray,Easy
+roundworm,Easy
+salamander,Easy
+salmon,Easy
+sambar deer,Easy
+sea anemone,Easy
+sea cucumber,Easy
+seagull,Easy
+seal,Easy
+skink,Easy
+skunk,Easy
+sloth bear,Easy
+slug,Easy
+snapping turtle,Easy
+snowy owl,Easy
+sperm whale,Easy
+sponge,Easy
+spoonbill,Easy
+stonefish,Easy
+sugar glider,Easy
+tapeworm,Easy
+tapir,Easy
+tarantula,Easy
+tasmanian devil,Easy
+termite,Easy
+thorny devil,Easy
+toad,Easy
+vampire bat,Easy
+vine snake,Easy
+weaver,Easy
+wildcat,Easy
+wildebeest,Easy
+wombat,Easy
+aardvark,Medium
+aardwolf,Medium
+adder,Medium
+aphid,Medium
+arapaima,Medium
+aye aye,Medium
+babirusa,Medium
+bandicoot,Medium
+barb,Medium
+barn owl,Medium
+barnacle,Medium
+barracuda,Medium
+bird of paradise,Medium
+black widow spider,Medium
+blobfish,Medium
+boa,Medium
+bobcat,Medium
+bonobo,Medium
+booklouse,Medium
+bowhead whale,Medium
+box jellyfish,Medium
+brine shrimp,Medium
+brittle star,Medium
+bull snake,Medium
+bustard,Medium
+caiman,Medium
+canary,Medium
+caracal,Medium
+carp,Medium
+carpenter ant,Medium
+cavy,Medium
+chinchilla,Medium
+cicada,Medium
+cichlid,Medium
+civet,Medium
+clam,Medium
+clouded leopard,Medium
+coati,Medium
+cockatiel,Medium
+cockatoo,Medium
+coelacanth,Medium
+colobus,Medium
+conch,Medium
+condor,Medium
+coral snake,Medium
+cormorant,Medium
+coyote,Medium
+damselfly,Medium
+dart frog,Medium
+dhole,Medium
+discus,Medium
+feather star,Medium
+fennec fox,Medium
+ferret,Medium
+fossa,Medium
+galago,Medium
+gar,Medium
+garter snake,Medium
+gazelle,Medium
+gecko,Medium
+gharial,Medium
+giant otter,Medium
+gibbon,Medium
+gila monster,Medium
+glass frog,Medium
+gnat,Medium
+goblin shark,Medium
+golden mole,Medium
+grebe,Medium
+greenland shark,Medium
+groundhog,Medium
+hagfish,Medium
+hercules beetle,Medium
+hermit crab,Medium
+herring,Medium
+howler monkey,Medium
+humpback whale,Medium
+hydra,Medium
+hyrax,Medium
+impala,Medium
+jaguarundi,Medium
+jay,Medium
+kashmir stag,Medium
+kestrel,Medium
+king crab,Medium
+kite,Medium
+kookaburra,Medium
+krait,Medium
+krill,Medium
+lacewing,Medium
+lamprey,Medium
+lark,Medium
+lemming,Medium
+lyrebird,Medium
+moray eel,Medium
+mudpuppy,Medium
+narwhal,Medium
+nightingale,Medium
+nilgai,Medium
+numbat,Medium
+oscar,Medium
+parakeet,Medium
+parrotfish,Medium
+partridge,Medium
+platy,Medium
+potoo,Medium
+pufferfish,Medium
+quetzal,Medium
+quokka,Medium
+raccoon dog,Medium
+rat snake,Medium
+rattlesnake,Medium
+red panda,Medium
+reindeer,Medium
+rhea,Medium
+rhinoceros beetle,Medium
+river otter,Medium
+roadrunner,Medium
+robin,Medium
+rohu,Medium
+sailfish,Medium
+sea fan,Medium
+sea lily,Medium
+sea lion,Medium
+sea otter,Medium
+sea pen,Medium
+sea snake,Medium
+sea urchin,Medium
+seadragon,Medium
+shoebill,Medium
+shrew,Medium
+shrimp,Medium
+siamang,Medium
+sidewinder,Medium
+silverfish,Medium
+stag beetle,Medium
+starling,Medium
+stingray,Medium
+stork,Medium
+swordtail,Medium
+takin,Medium
+tamarin,Medium
+tarsier,Medium
+thylacine,Medium
+tick,Medium
+tiger shark,Medium
+tilapia,Medium
+toucan,Medium
+tree frog,Medium
+tree shrew,Medium
+tuna,Medium
+walking stick,Medium
+wallaby,Medium
+walrus,Medium
+warbler,Medium
+warthog,Medium
+water strider,Medium
+weasel,Medium
+weevil,Medium
+whale shark,Medium
+whip scorpion,Medium
+wolverine,Medium
+woodcock,Medium
+addax,Hard
+amazon parrot,Hard
+angel shark,Hard
+antlion,Hard
+axis deer,Hard
+bamboo shark,Hard
+barasingha,Hard
+basking shark,Hard
+batfish,Hard
+bawean deer,Hard
+beaded lizard,Hard
+bearded dragon,Hard
+bearded seal,Hard
+bee eater,Hard
+blacknose shark,Hard
+blue crab,Hard
+blue monkey,Hard
+blue shark,Hard
+blue tongued skink,Hard
+bonnethead shark,Hard
+box turtle,Hard
+boxfish,Hard
+bristleworm,Hard
+bullhead shark,Hard
+bush dog,Hard
+bushbaby,Hard
+butterfish,Hard
+butterflyfish,Hard
+buttonquail,Hard
+buzzard,Hard
+camel spider,Hard
+capuchin,Hard
+caribou,Hard
+carpet shark,Hard
+catshark,Hard
+chiton,Hard
+clingfish,Hard
+coalfish,Hard
+coconut crab,Hard
+colobus monkey,Hard
+cookiecutter shark,Hard
+coot,Hard
+copepod,Hard
+copperhead,Hard
+cottontail,Hard
+crested gecko,Hard
+crocodile shark,Hard
+cuscus,Hard
+dik dik,Hard
+dobsonfly,Hard
+dusky shark,Hard
+earwig,Hard
+eland,Hard
+electric eel,Hard
+electric ray,Hard
+elephant bird,Hard
+elephant shrew,Hard
+epaulette shark,Hard
+ermine,Hard
+fallow deer,Hard
+fiddler crab,Hard
+fisher,Hard
+flycatcher,Hard
+fox snake,Hard
+frigatebird,Hard
+frilled shark,Hard
+frogfish,Hard
+frogmouth,Hard
+fur seal,Hard
+ghost shark,Hard
+goosefish,Hard
+grass snake,Hard
+great horned owl,Hard
+green frog,Hard
+green turtle,Hard
+grison,Hard
+grouse,Hard
+guenon,Hard
+guitarfish,Hard
+hartebeest,Hard
+hog deer,Hard
+hognose snake,Hard
+horn shark,Hard
+hutia,Hard
+ibex,Hard
+ibis,Hard
+indigo snake,Hard
+indri,Hard
+jumping spider,Hard
+king penguin,Hard
+king snake,Hard
+lapwing,Hard
+leafhopper,Hard
+lemon shark,Hard
+leopard shark,Hard
+loon,Hard
+mackerel,Hard
+magpie,Hard
+mako shark,Hard
+mallard,Hard
+maned wolf,Hard
+mangabey,Hard
+manta ray,Hard
+margay,Hard
+marmot,Hard
+marten,Hard
+megamouth shark,Hard
+mink,Hard
+moorhen,Hard
+mouflon,Hard
+muntjac,Hard
+musk deer,Hard
+musk shrew,Hard
+nurse shark,Hard
+ocelot,Hard
+oryx,Hard
+osprey,Hard
+owl monkey,Hard
+painted turtle,Hard
+patas monkey,Hard
+peccary,Hard
+philippine deer,Hard
+pika,Hard
+pipefish,Hard
+polecat,Hard
+prairie dog,Hard
+proboscis monkey,Hard
+pronghorn,Hard
+puffbird,Hard
+racer snake,Hard
+red deer,Hard
+reef shark,Hard
+roe deer,Hard
+saiga antelope,Hard
+saki,Hard
+sand flea,Hard
+sandbar shark,Hard
+sandpiper,Hard
+sawfish,Hard
+serval,Hard
+sevengill shark,Hard
+sharpnose shark,Hard
+shrew-mole,Hard
+silky shark,Hard
+sixgill shark,Hard
+skylark,Hard
+sole fish,Hard
+spectacled bear,Hard
+spider monkey,Hard
+spinner shark,Hard
+springbok,Hard
+springhare,Hard
+squirrel monkey,Hard
+star-nosed mole,Hard
+stoat,Hard
+stonefly,Hard
+sun bear,Hard
+sun spider,Hard
+swallow,Hard
+swamp deer,Hard
+swift,Hard
+teal,Hard
+tenrec,Hard
+tern,Hard
+tetra,Hard
+thornbill,Hard
+thresher shark,Hard
+thrush,Hard
+topi,Hard
+tufted deer,Hard
+uakari,Hard
+umbrella bird,Hard
+vervet monkey,Hard
+viperfish,Hard
+water deer,Hard
+water snake,Hard
+wobbegong shark,Hard
+wolf spider,Hard
+woolly monkey,Hard
+worm lizard,Hard
+zebra shark,Hard
+agama,Expert
+agouti,Expert
+amberjack,Expert
+amphipod,Expert
+anchovy,Expert
+anole,Expert
+antbird,Expert
+antechinus,Expert
+auks,Expert
+avocet,Expert
+barbel,Expert
+barbet,Expert
+basilisk,Expert
+bass,Expert
+bellbird,Expert
+bettong,Expert
+bharal,Expert
+bilby,Expert
+binturong,Expert
+blackbird,Expert
+blowfly,Expert
+bluegill,Expert
+boatman,Expert
+bobbit worm,Expert
+bonefish,Expert
+bongo,Expert
+booby,Expert
+bowerbird,Expert
+broadbill,Expert
+brocket deer,Expert
+brown recluse,Expert
+bunting,Expert
+burbot,Expert
+bushbuck,Expert
+cacomistle,Expert
+caddisfly,Expert
+caecilian,Expert
+caique,Expert
+capelin,Expert
+cardinal,Expert
+carolina,Expert
+chaffinch,Expert
+chamois,Expert
+char,Expert
+chickadee,Expert
+chough,Expert
+cock of the rock,Expert
+cod,Expert
+cooter,Expert
+cotinga,Expert
+cowrie,Expert
+crappie,Expert
+creeper,Expert
+crossbill,Expert
+curlew,Expert
+damselfish,Expert
+degu,Expert
+desman,Expert
+dipper,Expert
+dotterel,Expert
+dragonet,Expert
+dragonfish,Expert
+drongo,Expert
+duiker,Expert
+dunlin,Expert
+dunnart,Expert
+filefish,Expert
+firebrat,Expert
+flounder,Expert
+galah,Expert
+gallinule,Expert
+gannet,Expert
+gelada,Expert
+gemsbok,Expert
+genet,Expert
+gerenuk,Expert
+goatfish,Expert
+godwit,Expert
+gopher,Expert
+goral,Expert
+goshawk,Expert
+grackle,Expert
+grayling,Expert
+great auk,Expert
+greenshank,Expert
+grouper,Expert
+guanaco,Expert
+guillemot,Expert
+gundi,Expert
+gurnard,Expert
+gymnurid,Expert
+haddock,Expert
+halibut,Expert
+harvestman,Expert
+hawkfish,Expert
+hoatzin,Expert
+honeyguide,Expert
+huia,Expert
+jacamar,Expert
+jackdaw,Expert
+jerboa,Expert
+jird,Expert
+kinkajou,Expert
+kittiwake,Expert
+klipspringer,Expert
+kowari,Expert
+kultarr,Expert
+laughing owl,Expert
+limpet,Expert
+lingcod,Expert
+lorikeet,Expert
+manakin,Expert
+mara,Expert
+markhor,Expert
+mit,Expert
+moa,Expert
+mockingbird,Expert
+moho,Expert
+motmot,Expert
+mulgara,Expert
+nautilus,Expert
+needlefish,Expert
+nightjar,Expert
+ningaui,Expert
+noctule,Expert
+nudibranch,Expert
+nuthatch,Expert
+nutria,Expert
+nyala,Expert
+oelacanth,Expert
+oilbird,Expert
+olingo,Expert
+orb,Expert
+oriole,Expert
+otocinclus,Expert
+ovenbird,Expert
+oxpecker,Expert
+paca,Expert
+parula,Expert
+perch,Expert
+petrel,Expert
+phalarope,Expert
+pike,Expert
+pipistrelle,Expert
+planigale,Expert
+plover,Expert
+porbeagle,Expert
+porgy,Expert
+potoroo,Expert
+potto,Expert
+proteus,Expert
+ptarmigan,Expert
+puku,Expert
+quoll,Expert
+rail,Expert
+remora,Expert
+ringtail,Expert
+roller,Expert
+rook,Expert
+sable,Expert
+saiga,Expert
+sand dollar,Expert
+sanderling,Expert
+saola,Expert
+sapsucker,Expert
+sardine,Expert
+scallop,Expert
+scarab beetle,Expert
+sculpin,Expert
+serow,Expert
+shearwater,Expert
+shrike,Expert
+sifaka,Expert
+siren,Expert
+sitatunga,Expert
+skua,Expert
+smelt,Expert
+snapper,Expert
+solenodon,Expert
+songbird,Expert
+sora,Expert
+spurdog,Expert
+stephen's island wren,Expert
+sturgeon,Expert
+sunbird,Expert
+surfbird,Expert
+surgeonfish,Expert
+suslik,Expert
+swiftlet,Expert
+tamandua,Expert
+tarpon,Expert
+tayra,Expert
+tetraodon,Expert
+titi,Expert
+titmouse,Expert
+toucanet,Expert
+treecreeper,Expert
+triggerfish,Expert
+trogon,Expert
+trout,Expert
+tuatara,Expert
+tuco-tuco,Expert
+turaco,Expert
+turnstone,Expert
+vicuña,Expert
+vinegaroon,Expert
+viscacha,Expert
+vole,Expert
+waterbuck,Expert
+waxwing,Expert
+whelk,Expert
+whimbrel,Expert
+whippet,Expert
+whirligig,Expert
+wobbegong,Expert
+wrasse,Expert
+wren,Expert
+yakutian,Expert
+yellowhammer,Expert
+zorilla,Expert
+

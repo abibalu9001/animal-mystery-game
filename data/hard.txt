@@ -1,0 +1,181 @@
+addax
+amazon parrot
+angel shark
+antlion
+axis deer
+bamboo shark
+barasingha
+basking shark
+batfish
+bawean deer
+beaded lizard
+bearded dragon
+bearded seal
+bee eater
+blacknose shark
+blue crab
+blue monkey
+blue shark
+blue tongued skink
+bonnethead shark
+box turtle
+boxfish
+bristleworm
+bullhead shark
+bush dog
+bushbaby
+butterfish
+butterflyfish
+buttonquail
+buzzard
+camel spider
+capuchin
+caribou
+carpet shark
+catshark
+chiton
+clingfish
+coalfish
+coconut crab
+colobus monkey
+cookiecutter shark
+coot
+copepod
+copperhead
+cottontail
+crested gecko
+crocodile shark
+cuscus
+dik dik
+dobsonfly
+dusky shark
+earwig
+eland
+electric eel
+electric ray
+elephant bird
+elephant shrew
+epaulette shark
+ermine
+fallow deer
+fiddler crab
+fisher
+flycatcher
+fox snake
+frigatebird
+frilled shark
+frogfish
+frogmouth
+fur seal
+ghost shark
+goosefish
+grass snake
+great horned owl
+green frog
+green turtle
+grison
+grouse
+guenon
+guitarfish
+hartebeest
+hog deer
+hognose snake
+horn shark
+hutia
+ibex
+ibis
+indigo snake
+indri
+jumping spider
+king penguin
+king snake
+lapwing
+leafhopper
+lemon shark
+leopard shark
+loon
+mackerel
+magpie
+mako shark
+mallard
+maned wolf
+mangabey
+manta ray
+margay
+marmot
+marten
+megamouth shark
+mink
+moorhen
+mouflon
+muntjac
+musk deer
+musk shrew
+nurse shark
+ocelot
+oryx
+osprey
+owl monkey
+painted turtle
+patas monkey
+peccary
+philippine deer
+pika
+pipefish
+polecat
+prairie dog
+proboscis monkey
+pronghorn
+puffbird
+racer snake
+red deer
+reef shark
+roe deer
+saiga antelope
+saki
+sand flea
+sandbar shark
+sandpiper
+sawfish
+serval
+sevengill shark
+sharpnose shark
+shrew-mole
+silky shark
+sixgill shark
+skylark
+sole fish
+spectacled bear
+spider monkey
+spinner shark
+springbok
+springhare
+squirrel monkey
+star-nosed mole
+stoat
+stonefly
+sun bear
+sun spider
+swallow
+swamp deer
+swift
+teal
+tenrec
+tern
+tetra
+thornbill
+thresher shark
+thrush
+topi
+tufted deer
+uakari
+umbrella bird
+vervet monkey
+viperfish
+water deer
+water snake
+wobbegong shark
+wolf spider
+woolly monkey
+worm lizard
+zebra shark

@@ -1,0 +1,161 @@
+albatross
+alligator
+alpaca
+anemone
+angelfish
+anglerfish
+anteater
+antelope
+arctic fox
+armadillo
+arowana
+axolotl
+baboon
+badger
+beaver
+bed bug
+beluga
+betta fish
+black bear
+blackbuck
+brain coral
+brown bear
+budgerigar
+bull shark
+bullfrog
+cape buffalo
+capybara
+cassowary
+catla
+chipmunk
+chital
+clownfish
+coral
+cougar
+crayfish
+cricket
+cuttlefish
+dingo
+dodo
+dogfish
+dugong
+dung beetle
+echidna
+egret
+elk
+falcon
+finch
+flea
+flying fish
+flying lizard
+flying squirrel
+frilled lizard
+gerbil
+goldfinch
+goose
+great white shark
+green snake
+grizzly bear
+guinea pig
+guppy
+hammerhead shark
+hare
+hawk
+hedgehog
+heron
+hoopoe
+hornbill
+horned lizard
+hornet
+horseshoe crab
+iguana
+jackal
+jackrabbit
+kangaroo rat
+killer whale
+koi
+komodo dragon
+kudu
+ladybug
+langur
+leaf insect
+leatherback turtle
+leech
+lemur
+lionfish
+llama
+lobster
+locust
+loris
+louse
+lungfish
+lynx
+macaw
+mamba
+manatee
+mandrill
+mantis shrimp
+marlin
+marmoset
+mayfly
+meerkat
+millipede
+mite
+mole
+molly
+monitor lizard
+moose
+moth
+mouse
+mouse deer
+mudskipper
+mule
+mule deer
+muskox
+okapi
+opossum
+otter
+oyster
+pangolin
+passenger pigeon
+pelican
+pheasant
+planarian
+polar bear
+porpoise
+portuguese man of war
+quail
+raccoon
+ray
+roundworm
+salamander
+salmon
+sambar deer
+sea anemone
+sea cucumber
+seagull
+seal
+skink
+skunk
+sloth bear
+slug
+snapping turtle
+snowy owl
+sperm whale
+sponge
+spoonbill
+stonefish
+sugar glider
+tapeworm
+tapir
+tarantula
+tasmanian devil
+termite
+thorny devil
+toad
+vampire bat
+vine snake
+weaver
+wildcat
+wildebeest
+wombat

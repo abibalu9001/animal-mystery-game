@@ -1,0 +1,163 @@
+aardvark
+aardwolf
+adder
+aphid
+arapaima
+aye aye
+babirusa
+bandicoot
+barb
+barn owl
+barnacle
+barracuda
+bird of paradise
+black widow spider
+blobfish
+boa
+bobcat
+bonobo
+booklouse
+bowhead whale
+box jellyfish
+brine shrimp
+brittle star
+bull snake
+bustard
+caiman
+canary
+caracal
+carp
+carpenter ant
+cavy
+chinchilla
+cicada
+cichlid
+civet
+clam
+clouded leopard
+coati
+cockatiel
+cockatoo
+coelacanth
+colobus
+conch
+condor
+coral snake
+cormorant
+coyote
+damselfly
+dart frog
+dhole
+discus
+feather star
+fennec fox
+ferret
+fossa
+galago
+gar
+garter snake
+gazelle
+gecko
+gharial
+giant otter
+gibbon
+gila monster
+glass frog
+gnat
+goblin shark
+golden mole
+grebe
+greenland shark
+groundhog
+hagfish
+hercules beetle
+hermit crab
+herring
+howler monkey
+humpback whale
+hydra
+hyrax
+impala
+jaguarundi
+jay
+kashmir stag
+kestrel
+king crab
+kite
+kookaburra
+krait
+krill
+lacewing
+lamprey
+lark
+lemming
+lyrebird
+moray eel
+mudpuppy
+narwhal
+nightingale
+nilgai
+numbat
+oscar
+parakeet
+parrotfish
+partridge
+platy
+potoo
+pufferfish
+quetzal
+quokka
+raccoon dog
+rat snake
+rattlesnake
+red panda
+reindeer
+rhea
+rhinoceros beetle
+river otter
+roadrunner
+robin
+rohu
+sailfish
+sea fan
+sea lily
+sea lion
+sea otter
+sea pen
+sea snake
+sea urchin
+seadragon
+shoebill
+shrew
+shrimp
+siamang
+sidewinder
+silverfish
+stag beetle
+starling
+stingray
+stork
+swordtail
+takin
+tamarin
+tarsier
+thylacine
+tick
+tiger shark
+tilapia
+toucan
+tree frog
+tree shrew
+tuna
+walking stick
+wallaby
+walrus
+warbler
+warthog
+water strider
+weasel
+weevil
+whale shark
+whip scorpion
+wolverine
+woodcock

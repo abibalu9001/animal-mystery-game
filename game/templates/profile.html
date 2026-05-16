@@ -1,0 +1,524 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Profile Dashboard</title>
+	<link
+    rel="icon"
+
+    type="image/png"
+
+    href="{% static 'images/favicon.png' %}">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white p-6 md:p-8">
+
+    <div class="max-w-7xl mx-auto space-y-10">
+
+        <!-- Profile Card -->
+
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-10">
+
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+
+                <!-- Left Side -->
+
+                <div>
+
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-yellow-300">
+
+                        {{ player.username }}
+
+                    </h1>
+
+                    <p class="text-xl md:text-2xl text-slate-300 mt-5">
+
+                        {{ player.state }},
+                        {{ player.district }}
+
+                    </p>
+
+                </div>
+
+                <!-- Middle Buttons -->
+
+                <div class="flex flex-col gap-6">
+
+                    <!-- Monthly Rewards -->
+
+                    <a href="/monthly-rewards/"
+
+                       class="px-8 py-4 bg-purple-500 hover:bg-purple-400 text-white text-xl font-bold rounded-2xl transition duration-300 shadow-2xl text-center">
+
+                        Monthly Rewards
+
+                    </a>
+
+                    <!-- Instructions -->
+
+                    <a href="/instructions/"
+
+                       class="px-8 py-4 bg-blue-500 hover:bg-blue-400 text-white text-xl font-bold rounded-2xl transition duration-300 shadow-2xl text-center">
+
+                        Instructions
+
+                    </a>
+
+                </div>
+
+                <!-- Right Side -->
+
+                <div class="bg-slate-900 rounded-2xl px-10 py-8 shadow-xl text-center">
+
+                    <h2 class="text-xl text-slate-400">
+
+                        Remaining Free Games
+
+                    </h2>
+
+                    <p class="text-5xl font-extrabold text-red-400 mt-4">
+
+                        {{ remaining_games }}
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Free Game Notice -->
+
+        <div class="bg-red-500/10 border border-red-400/30 rounded-2xl p-6 text-center shadow-xl">
+
+            <h2 class="text-2xl font-bold text-red-300">
+
+                Free Game Limit
+
+            </h2>
+
+            <p class="text-lg md:text-xl text-slate-200 mt-4 leading-relaxed">
+
+                Each account receives 100 free games.
+
+                After completing 100 games,
+                you must pay ₹2 to unlock the next 100 games.
+
+            </p>
+
+        </div>
+
+        <!-- Unlock Button -->
+
+        {% if remaining_games <= 0 %}
+
+        <div class="bg-red-500/20 border border-red-400 rounded-3xl p-8 text-center shadow-2xl">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-red-300 mb-5">
+
+                Free Games Exhausted
+
+            </h2>
+
+            <p class="text-xl md:text-2xl text-slate-200 leading-relaxed mb-8">
+
+                Pay ₹2 to unlock the next 100 games.
+
+            </p>
+
+            <a href="/payment/"
+
+               class="px-10 py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-xl">
+
+                Unlock More Games
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+        <!-- Overall Statistics -->
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+            <!-- Average Score -->
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 text-center">
+
+                <h2 class="text-lg md:text-2xl text-slate-300">
+
+                    Total Average Score
+
+                </h2>
+
+                <p class="text-3xl md:text-6xl font-extrabold text-yellow-300 mt-5">
+
+                    {{ total_avg }}%
+
+                </p>
+
+            </div>
+
+            <!-- Maximum Score -->
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 text-center">
+
+                <h2 class="text-lg md:text-2xl text-slate-300">
+
+                    Total Maximum Score
+
+                </h2>
+
+                <p class="text-3xl md:text-6xl font-extrabold text-green-400 mt-5">
+
+                    {{ total_max }}%
+
+                </p>
+
+            </div>
+
+            <!-- Games Played -->
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 text-center">
+
+                <h2 class="text-lg md:text-2xl text-slate-300">
+
+                    Total Games Played
+
+                </h2>
+
+                <p class="text-3xl md:text-6xl font-extrabold text-blue-400 mt-5">
+
+                    {{ total_games }}
+
+                </p>
+
+            </div>
+
+            <!-- AI Cost -->
+
+            <div class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 text-center">
+
+                <h2 class="text-lg md:text-2xl text-slate-300">
+
+                    Total AI Cost
+
+                </h2>
+
+                <p class="text-3xl md:text-6xl font-extrabold text-cyan-400 mt-5 break-words">
+
+                    ₹{{ player.total_ai_cost|floatformat:3 }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Level Statistics -->
+
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-10">
+
+            <h1 class="text-4xl md:text-5xl font-extrabold text-center text-yellow-300 mb-12">
+
+                Level Statistics
+
+            </h1>
+
+            <div class="overflow-x-auto">
+
+                <table class="w-full border-collapse overflow-hidden rounded-3xl">
+
+                    <thead>
+
+                        <tr class="bg-slate-900 text-yellow-300 text-lg md:text-2xl">
+
+                            <th class="p-5 text-left">
+
+                                Level
+
+                            </th>
+
+                            <th class="p-5 text-center">
+
+                                Average Score
+
+                            </th>
+
+                            <th class="p-5 text-center">
+
+                                Maximum Score
+
+                            </th>
+
+                            <th class="p-5 text-center">
+
+                                Games Played
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody class="text-base md:text-xl">
+
+                        <!-- Beginner -->
+
+                        <tr class="bg-slate-800 border-b border-slate-700">
+
+                            <td class="p-5 font-bold text-green-400">
+
+                                Beginner
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Beginner.avg|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Beginner.max|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Beginner.games|default:"0" }}
+
+                            </td>
+
+                        </tr>
+
+                        <!-- Easy -->
+
+                        <tr class="bg-slate-850 border-b border-slate-700">
+
+                            <td class="p-5 font-bold text-blue-400">
+
+                                Easy
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Easy.avg|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Easy.max|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Easy.games|default:"0" }}
+
+                            </td>
+
+                        </tr>
+
+                        <!-- Medium -->
+
+                        <tr class="bg-slate-800 border-b border-slate-700">
+
+                            <td class="p-5 font-bold text-yellow-300">
+
+                                Medium
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Medium.avg|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Medium.max|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Medium.games|default:"0" }}
+
+                            </td>
+
+                        </tr>
+
+                        <!-- Hard -->
+
+                        <tr class="bg-slate-850 border-b border-slate-700">
+
+                            <td class="p-5 font-bold text-orange-400">
+
+                                Hard
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Hard.avg|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Hard.max|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Hard.games|default:"0" }}
+
+                            </td>
+
+                        </tr>
+
+                        <!-- Expert -->
+
+                        <tr class="bg-slate-800">
+
+                            <td class="p-5 font-bold text-red-400">
+
+                                Expert
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Expert.avg|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Expert.max|default:"—" }}%
+
+                            </td>
+
+                            <td class="p-5 text-center">
+
+                                {{ stats.Expert.games|default:"0" }}
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- Start Game -->
+
+        <div class="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-10 text-center">
+
+            <h1 class="text-3xl md:text-4xl font-extrabold text-yellow-300 mb-8">
+
+                Start New Game
+
+            </h1>
+
+            <form method="POST" action="/game/" class="space-y-8">
+
+                {% csrf_token %}
+
+                <select
+                    name="level"
+
+                    class="w-full px-6 py-5 rounded-2xl bg-slate-900 text-white text-xl md:text-2xl border border-slate-700">
+
+                    <option value="Beginner">
+
+                        Beginner
+
+                    </option>
+
+                    <option value="Easy">
+
+                        Easy
+
+                    </option>
+
+                    <option value="Medium">
+
+                        Medium
+
+                    </option>
+
+                    <option value="Hard">
+
+                        Hard
+
+                    </option>
+
+                    <option value="Expert">
+
+                        Expert
+
+                    </option>
+
+                </select>
+
+                <button
+                    type="submit"
+
+                    class="px-12 py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-2xl md:text-3xl font-extrabold rounded-3xl transition duration-300 shadow-2xl hover:scale-105">
+
+                    Start Game
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+<footer class="mt-16 text-center text-slate-400 text-sm md:text-base pb-6">
+
+    <div class="border-t border-white/10 pt-6">
+
+        <p>
+
+            © 2026 Abinav Balasubbiramaniam.
+            All rights reserved.
+
+        </p>
+
+        <p class="mt-3 leading-relaxed max-w-4xl mx-auto px-4">
+
+            Animal images are dynamically sourced from publicly available
+            Wikimedia/Wikipedia resources for educational and gameplay purposes.
+            This website is an independent AI-powered game project and is not
+            affiliated with Wikimedia Foundation or any external organizations.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

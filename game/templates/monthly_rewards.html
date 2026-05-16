@@ -1,0 +1,200 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Monthly Rewards</title>
+<link
+    rel="icon"
+
+    type="image/png"
+
+    href="{% static 'images/favicon.png' %}">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white p-6 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-16">
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-yellow-300">
+
+                🏆 Monthly Rewards
+
+            </h1>
+
+            <p class="text-xl md:text-2xl text-slate-300 mt-6">
+
+                Your monthly achievements in Animal Mystery
+
+            </p>
+
+        </div>
+
+        <!-- Rewards Grid -->
+
+        {% if rewards %}
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            {% for reward in rewards %}
+
+            <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-10 text-center hover:scale-105 transition duration-300">
+
+                <!-- Badge Emoji -->
+
+                <div class="text-7xl mb-8">
+
+                    {% if reward.reward_type == "Monthly Champion" %}
+
+                        🥇
+
+                    {% elif reward.reward_type == "Most Active Player" %}
+
+                        🔥
+
+                    {% elif reward.reward_type == "Lowest AI Cost" %}
+
+                        💎
+
+                    {% else %}
+
+                        🏆
+
+                    {% endif %}
+
+                </div>
+
+                <!-- Reward Name -->
+
+                <h2 class="text-3xl font-extrabold text-yellow-300 mb-5 leading-relaxed">
+
+                    {{ reward.reward_type }}
+
+                </h2>
+
+                <!-- Month -->
+
+                <p class="text-2xl text-slate-300">
+
+                    {{ reward.month }}{{ reward.year }}
+
+                </p>
+
+                <!-- Reward Value -->
+
+                <div class="bg-slate-900 rounded-2xl p-6 mt-8 shadow-xl">
+
+                    <p class="text-2xl text-green-400 font-bold leading-relaxed">
+
+                        {{ reward.value }}
+
+                    </p>
+
+                </div>
+
+                <!-- Extra Description -->
+
+                <p class="text-lg text-slate-400 mt-8 leading-relaxed">
+
+                    Outstanding performance achieved during this month.
+
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <!-- Empty State -->
+
+        <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-16 text-center">
+
+            <div class="text-8xl mb-8">
+
+                🏅
+
+            </div>
+
+            <h2 class="text-4xl font-extrabold text-yellow-300">
+
+                No Monthly Rewards Yet
+
+            </h2>
+
+            <p class="text-2xl text-slate-400 mt-8 leading-relaxed">
+
+                Play more games and achieve monthly milestones
+                to unlock reward badges.
+
+            </p>
+
+        </div>
+
+        {% endif %}
+
+        <!-- Buttons -->
+
+        <div class="flex flex-wrap justify-center gap-8 mt-20">
+
+            <!-- Dashboard -->
+
+            <a href="/profile/"
+
+               class="px-10 py-5 bg-blue-500 hover:bg-blue-400 text-white text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl">
+
+                Dashboard
+
+            </a>
+
+            <!-- Start Game -->
+
+            <a href="/profile/"
+
+               class="px-10 py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl">
+
+                Start New Game
+
+            </a>
+
+        </div>
+
+    </div>
+<footer class="mt-16 text-center text-slate-400 text-sm md:text-base pb-6">
+
+    <div class="border-t border-white/10 pt-6">
+
+        <p>
+
+            © 2026 Abinav Balasubbiramaniam.
+            All rights reserved.
+
+        </p>
+
+        <p class="mt-3 leading-relaxed max-w-4xl mx-auto px-4">
+
+            Animal images are dynamically sourced from publicly available
+            Wikimedia/Wikipedia resources for educational and gameplay purposes.
+            This website is an independent AI-powered game project and is not
+            affiliated with Wikimedia Foundation or any external organizations.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

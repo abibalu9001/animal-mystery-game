@@ -1,0 +1,293 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Game Result</title>
+<link
+    rel="icon"
+
+    type="image/png"
+
+    href="{% static 'images/favicon.png' %}">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Confetti -->
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Shake Animation -->
+
+    <style>
+
+        @keyframes shake {
+
+            0% { transform: translateX(0); }
+
+            25% { transform: translateX(-10px); }
+
+            50% { transform: translateX(10px); }
+
+            75% { transform: translateX(-10px); }
+
+            100% { transform: translateX(0); }
+
+        }
+
+        .shake {
+
+            animation: shake 0.5s;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-950 text-white flex items-center justify-center p-6 md:p-8">
+
+    <div class="w-full max-w-4xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-12 text-center">
+
+        <!-- Win / Lose Banner -->
+
+        {% if won %}
+
+        <h1 class="text-4xl md:text-7xl font-extrabold text-green-400 mb-12">
+
+            🎉 YOU WON
+
+        </h1>
+
+        {% else %}
+
+        <h1 class="text-4xl md:text-7xl font-extrabold text-red-400 mb-12 shake">
+
+            💀 YOU LOST
+
+        </h1>
+
+        {% endif %}
+
+        <!-- Animal Section -->
+
+        {% if not won %}
+
+        <div class="bg-slate-800 rounded-3xl p-8 shadow-xl mb-10">
+
+            <h2 class="text-2xl md:text-3xl text-slate-300">
+
+                Hidden Animal
+
+            </h2>
+
+            <p class="text-4xl md:text-6xl font-bold text-yellow-300 mt-5">
+
+                {{ animal }}
+
+            </p>
+
+            <!-- Animal Image -->
+
+            {% if image_url %}
+
+            <img
+                src="{{ image_url }}"
+
+                class="w-full md:h-[450px] h-[300px]
+                       object-cover rounded-3xl shadow-2xl mt-10
+                       transition duration-700">
+
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+        <!-- Final Score -->
+
+        <div class="bg-slate-800 rounded-3xl p-8 shadow-xl mb-10">
+
+            <h2 class="text-2xl md:text-3xl text-slate-300">
+
+                Final Score
+
+            </h2>
+
+            <p class="text-5xl md:text-7xl font-extrabold text-green-400 mt-5">
+
+                {{ score }}%
+
+            </p>
+
+            <p class="text-xl md:text-2xl text-slate-300 mt-5">
+
+                Difficulty:
+                {{ level }}
+
+            </p>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+
+            <!-- Questions -->
+
+            <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+
+                <h3 class="text-xl md:text-2xl text-slate-300">
+
+                    Questions Used
+
+                </h3>
+
+                <p class="text-3xl md:text-5xl font-bold text-blue-400 mt-5">
+
+                    {{ questions_used }}
+
+                </p>
+
+            </div>
+
+            <!-- Wrong Guesses -->
+
+            <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+
+                <h3 class="text-xl md:text-2xl text-slate-300">
+
+                    Wrong Guesses
+
+                </h3>
+
+                <p class="text-3xl md:text-5xl font-bold text-red-400 mt-5">
+
+                    {{ wrong_guesses }}
+
+                </p>
+
+            </div>
+
+            <!-- AI Cost -->
+
+            <div class="bg-slate-800 rounded-2xl p-6 shadow-lg">
+
+                <h3 class="text-xl md:text-2xl text-slate-300">
+
+                    AI Cost
+
+                </h3>
+
+                <p class="text-3xl md:text-5xl font-bold text-green-400 mt-5 break-words">
+
+                    ₹{{ cost }}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+
+        <div class="flex flex-wrap justify-center gap-8">
+
+            <!-- New Game -->
+
+            <a href="/profile/"
+
+               class="px-10 md:px-12 py-4 md:py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl hover:scale-105">
+
+                New Game
+
+            </a>
+
+            <!-- Dashboard -->
+
+            <a href="/profile/"
+
+               class="px-10 md:px-12 py-4 md:py-5 bg-blue-500 hover:bg-blue-400 text-white text-xl md:text-2xl font-bold rounded-2xl transition duration-300 shadow-2xl hover:scale-105">
+
+                Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Sounds -->
+
+    <audio id="correctSound"
+           src="{% static 'sounds/correct.mp3' %}">
+    </audio>
+
+    <audio id="loseSound"
+           src="{% static 'sounds/lose.mp3' %}">
+    </audio>
+
+    <!-- Sound Triggers -->
+
+    {% if won %}
+
+    <script>
+
+        document
+            .getElementById("correctSound")
+            .play();
+
+        confetti({
+
+            particleCount: 200,
+
+            spread: 120,
+
+            origin: { y: 0.6 }
+
+        });
+
+    </script>
+
+    {% endif %}
+
+    {% if not won %}
+
+    <script>
+
+        document
+            .getElementById("loseSound")
+            .play();
+
+    </script>
+
+    {% endif %}
+<footer class="mt-16 text-center text-slate-400 text-sm md:text-base pb-6">
+
+    <div class="border-t border-white/10 pt-6">
+
+        <p>
+
+            © 2026 Abinav Balasubbiramaniam.
+            All rights reserved.
+
+        </p>
+
+        <p class="mt-3 leading-relaxed max-w-4xl mx-auto px-4">
+
+            Animal images are dynamically sourced from publicly available
+            Wikimedia/Wikipedia resources for educational and gameplay purposes.
+            This website is an independent AI-powered game project and is not
+            affiliated with Wikimedia Foundation or any external organizations.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

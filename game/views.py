@@ -140,8 +140,10 @@ def login_view(request):
 
         )
 
-        email_message.send()
+        #email_message.send()
 
+        print(f"OTP: {otp}")
+        
         return redirect("/verify-otp/")
 
     return render(request, "login.html")

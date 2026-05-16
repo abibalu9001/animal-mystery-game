@@ -5,9 +5,6 @@ import math
 import os
 import calendar
 
-from django.core.mail import EmailMultiAlternatives
-from django.conf import settings
-
 from google import genai
 
 from .models import (
@@ -24,7 +21,6 @@ from .models import (
 
 from .animal_loader import get_random_animal
 from .image_url import get_wikipedia_image
-
 
 
 # =====================================================
@@ -59,7 +55,6 @@ level_factor = {
 # HOME PAGE
 # =====================================================
 
-
 def home_view(request):
 
     if request.session.get("logged_in"):
@@ -73,7 +68,6 @@ def home_view(request):
 # LOGIN PAGE
 # =====================================================
 
-
 def login_view(request):
 
     if request.session.get("logged_in"):
@@ -84,111 +78,34 @@ def login_view(request):
 
         email = request.POST.get("email")
 
-        otp = random.randint(100000, 999999)
+        request.session["logged_in"] = True
 
-        request.session["otp"] = str(otp)
+        request.session["email"] = email
 
-        request.session["pending_email"] = email
+        # check whether profile exists
 
-        subject = "Animal Mystery OTP Verification"
+        player_exists = PlayerProfile.objects.filter(
+            email=email
+        ).exists()
 
-        from_email = settings.EMAIL_HOST_USER
+        # existing user
 
-        to = [email]
+        if player_exists:
 
-        text_content = f"Your OTP is {otp}"
+            return redirect("/profile/")
 
-        html_content = f"""
-        <div style='font-family:Arial;background:#0f172a;color:white;padding:40px;border-radius:20px;'>
+        # new user
 
-        <h1 style='color:#facc15;text-align:center;'>🐾 Animal Mystery</h1>
+        else:
 
-        <p style='font-size:20px;'>
-        Welcome to Animal Mystery.
-        </p>
-
-        <p style='font-size:20px;'>
-        Use the OTP below to continue login.
-        </p>
-
-        <div style='background:#1e293b;padding:30px;border-radius:18px;text-align:center;margin-top:35px;'>
-
-        <span style='font-size:50px;font-weight:bold;color:#facc15;letter-spacing:12px;'>
-
-        {otp}
-
-        </span>
-
-        </div>
-
-        </div>
-        """
-
-        email_message = EmailMultiAlternatives(
-
-            subject,
-            text_content,
-            from_email,
-            to
-
-        )
-
-        email_message.attach_alternative(
-
-            html_content,
-            "text/html"
-
-        )
-
-        #email_message.send()
-
-        print(f"OTP: {otp}")
-        
-        return redirect("/verify-otp/")
+            return redirect("/setup-profile/")
 
     return render(request, "login.html")
 
 
 # =====================================================
-# VERIFY OTP
-# =====================================================
-
-
-def verify_otp_view(request):
-
-    if request.method == "POST":
-
-        entered_otp = request.POST.get("otp")
-
-        real_otp = request.session.get("otp")
-
-        email = request.session.get("pending_email")
-
-        if entered_otp == real_otp:
-
-            request.session["logged_in"] = True
-
-            request.session["email"] = email
-
-            player_exists = PlayerProfile.objects.filter(
-                email=email
-            ).exists()
-
-            if player_exists:
-
-                return redirect("/profile/")
-
-            else:
-
-                return redirect("/setup-profile/")
-
-    return render(request, "verify_otp.html")
-
-
-# =====================================================
 # PROFILE SETUP
 # =====================================================
-
 
 def setup_profile_view(request):
 
@@ -211,13 +128,21 @@ def setup_profile_view(request):
         PlayerProfile.objects.create(
 
             email=email,
+
             username=username,
+
             state=state,
+
             district=district,
+
             total_average_score=0,
+
             max_score=0,
+
             total_games_played=0,
+
             total_ai_cost=0,
+
             remaining_games=100
 
         )
@@ -231,7 +156,6 @@ def setup_profile_view(request):
 # PROFILE PAGE
 # =====================================================
 
-
 def profile_view(request):
 
     if not request.session.get("logged_in"):
@@ -243,6 +167,10 @@ def profile_view(request):
     player = PlayerProfile.objects.filter(
         email=email
     ).first()
+
+    if not player:
+
+        return redirect("/setup-profile/")
 
     all_stats = LevelStats.objects.filter(
         player=player
@@ -262,10 +190,6 @@ def profile_view(request):
 
         }
 
-    if not player:
-
-        return redirect("/setup-profile/")
-
     return render(request, "profile.html", {
 
         "player": player,
@@ -278,7 +202,7 @@ def profile_view(request):
 
         "total_max": player.max_score,
 
-        "stats": stats_dict,
+        "stats": stats_dict
 
     })
 
@@ -286,7 +210,6 @@ def profile_view(request):
 # =====================================================
 # INSTRUCTIONS PAGE
 # =====================================================
-
 
 def instructions_view(request):
 
@@ -301,7 +224,6 @@ def instructions_view(request):
 # GAME PAGE
 # =====================================================
 
-
 def game_view(request):
 
     if not request.session.get("logged_in"):
@@ -310,9 +232,21 @@ def game_view(request):
 
     email = request.session.get("email")
 
-    player = PlayerProfile.objects.get(email=email)
+    player = PlayerProfile.objects.get(
+        email=email
+    )
 
-    if "animal" not in request.session:
+    # prevent no-games exploit
+
+    if player.remaining_games <= 0:
+
+        return redirect("/payment/")
+
+    # =============================================
+    # START NEW GAME
+    # =============================================
+
+    if request.method == "POST" and "level" in request.POST:
 
         level = request.POST.get(
             "level",
@@ -331,9 +265,17 @@ def game_view(request):
 
         request.session["cost"] = 0
 
+        request.session["won"] = False
+
         player.remaining_games -= 1
 
         player.save()
+
+    # no active game
+
+    if "animal" not in request.session:
+
+        return redirect("/profile/")
 
     animal = request.session["animal"]
 
@@ -470,7 +412,6 @@ Question:
 # RESULT PAGE
 # =====================================================
 
-
 def result_view(request):
 
     if not request.session.get("logged_in"):
@@ -479,7 +420,9 @@ def result_view(request):
 
     email = request.session.get("email")
 
-    player = PlayerProfile.objects.get(email=email)
+    player = PlayerProfile.objects.get(
+        email=email
+    )
 
     questions = request.session.get("questions", 0)
 
@@ -521,6 +464,8 @@ def result_view(request):
 
     score = round(score, 2)
 
+    # lost games => 0
+
     if not won:
 
         score = 0
@@ -554,6 +499,7 @@ def result_view(request):
         wrong_tries=wrong
 
     )
+
     # =============================================
     # UPDATE LEVEL STATS
     # =============================================
@@ -648,7 +594,6 @@ def result_view(request):
 # PAYMENT PAGE
 # =====================================================
 
-
 def payment_view(request):
 
     if not request.session.get("logged_in"):
@@ -661,7 +606,6 @@ def payment_view(request):
 # =====================================================
 # PAYMENT SUCCESS
 # =====================================================
-
 
 def payment_success_view(request):
 
@@ -679,15 +623,8 @@ def payment_success_view(request):
 
 
 # =====================================================
-# LOGOUT
+# MONTHLY REWARDS PAGE
 # =====================================================
-
-
-def logout_view(request):
-
-    request.session.flush()
-
-    return redirect("/")
 
 def monthly_rewards_view(request):
 
@@ -736,3 +673,14 @@ def monthly_rewards_view(request):
         }
 
     )
+
+
+# =====================================================
+# LOGOUT
+# =====================================================
+
+def logout_view(request):
+
+    request.session.flush()
+
+    return redirect("/")

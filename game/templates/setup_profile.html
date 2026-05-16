@@ -1,268 +1,284 @@
 {% load static %}
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
 
 <head>
 
-<title>Setup Profile</title>
-<link
-    rel="icon"
+    <title>Setup Profile</title>
 
-    type="image/png"
+    <!-- Favicon -->
 
-    href="{% static 'images/favicon.png' %}">
+    <link
+        rel="icon"
+        type="image/png"
+        href="{% static 'images/favicon.png' %}">
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
-<body class="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 flex items-center justify-center text-white p-8">
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white flex flex-col">
 
-<div class="w-full max-w-2xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-12">
+    <!-- Main Center Area -->
 
-    <h1 class="text-5xl font-extrabold text-yellow-300 text-center mb-12">
+    <div class="flex-grow flex items-center justify-center p-6 md:p-8">
 
-        Profile Setup
+        <!-- Main Card -->
 
-    </h1>
+        <div class="w-full max-w-2xl bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 p-8 md:p-12">
 
-    <form method="POST" class="space-y-8">
+            <!-- Heading -->
 
-        {% csrf_token %}
+            <h1 class="text-4xl md:text-5xl font-extrabold text-yellow-300 text-center mb-12">
 
-        <!-- Username -->
+                Profile Setup
 
-        <div>
+            </h1>
 
-            <label class="block text-2xl text-slate-300 mb-3">
+            <!-- Form -->
 
-                Username
+            <form method="POST" class="space-y-8">
 
-            </label>
+                {% csrf_token %}
 
-            <input
-                type="text"
-                name="username"
-                placeholder="Enter Username"
+                <!-- Username -->
 
-                class="w-full px-6 py-5 rounded-2xl bg-slate-900 text-white text-xl border border-slate-700 focus:outline-none focus:ring-4 focus:ring-yellow-400"
+                <div>
 
-                required>
+                    <label class="block text-xl md:text-2xl text-slate-300 mb-3">
+
+                        Username
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+
+                        class="w-full px-6 py-5 rounded-2xl bg-slate-900 text-white text-lg md:text-xl border border-slate-700 focus:outline-none focus:ring-4 focus:ring-yellow-400"
+
+                        required>
+
+                </div>
+
+                <!-- State -->
+
+                <div>
+
+                    <label class="block text-xl md:text-2xl text-slate-300 mb-3">
+
+                        State
+
+                    </label>
+
+                    <select
+                        id="state"
+                        name="state"
+
+                        onchange="updateDistricts()"
+
+                        class="w-full px-6 py-5 rounded-2xl bg-slate-900 text-white text-lg md:text-xl border border-slate-700"
+
+                        required>
+
+                        <option value="">Select State / UT</option>
+
+                        <option value="Andaman and Nicobar Islands">
+                            Andaman and Nicobar Islands
+                        </option>
+
+                        <option value="Andhra Pradesh">
+                            Andhra Pradesh
+                        </option>
+
+                        <option value="Arunachal Pradesh">
+                            Arunachal Pradesh
+                        </option>
+
+                        <option value="Assam">
+                            Assam
+                        </option>
+
+                        <option value="Bihar">
+                            Bihar
+                        </option>
+
+                        <option value="Chandigarh">
+                            Chandigarh
+                        </option>
+
+                        <option value="Chhattisgarh">
+                            Chhattisgarh
+                        </option>
+
+                        <option value="Dadra and Nagar Haveli and Daman and Diu">
+                            Dadra and Nagar Haveli and Daman and Diu
+                        </option>
+
+                        <option value="Delhi">
+                            Delhi
+                        </option>
+
+                        <option value="Goa">
+                            Goa
+                        </option>
+
+                        <option value="Gujarat">
+                            Gujarat
+                        </option>
+
+                        <option value="Haryana">
+                            Haryana
+                        </option>
+
+                        <option value="Himachal Pradesh">
+                            Himachal Pradesh
+                        </option>
+
+                        <option value="Jammu and Kashmir">
+                            Jammu and Kashmir
+                        </option>
+
+                        <option value="Jharkhand">
+                            Jharkhand
+                        </option>
+
+                        <option value="Karnataka">
+                            Karnataka
+                        </option>
+
+                        <option value="Kerala">
+                            Kerala
+                        </option>
+
+                        <option value="Ladakh">
+                            Ladakh
+                        </option>
+
+                        <option value="Lakshadweep">
+                            Lakshadweep
+                        </option>
+
+                        <option value="Madhya Pradesh">
+                            Madhya Pradesh
+                        </option>
+
+                        <option value="Maharashtra">
+                            Maharashtra
+                        </option>
+
+                        <option value="Manipur">
+                            Manipur
+                        </option>
+
+                        <option value="Meghalaya">
+                            Meghalaya
+                        </option>
+
+                        <option value="Mizoram">
+                            Mizoram
+                        </option>
+
+                        <option value="Nagaland">
+                            Nagaland
+                        </option>
+
+                        <option value="Odisha">
+                            Odisha
+                        </option>
+
+                        <option value="Puducherry">
+                            Puducherry
+                        </option>
+
+                        <option value="Punjab">
+                            Punjab
+                        </option>
+
+                        <option value="Rajasthan">
+                            Rajasthan
+                        </option>
+
+                        <option value="Sikkim">
+                            Sikkim
+                        </option>
+
+                        <option value="Tamil Nadu">
+                            Tamil Nadu
+                        </option>
+
+                        <option value="Telangana">
+                            Telangana
+                        </option>
+
+                        <option value="Tripura">
+                            Tripura
+                        </option>
+
+                        <option value="Uttar Pradesh">
+                            Uttar Pradesh
+                        </option>
+
+                        <option value="Uttarakhand">
+                            Uttarakhand
+                        </option>
+
+                        <option value="West Bengal">
+                            West Bengal
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- District -->
+
+                <div>
+
+                    <label class="block text-xl md:text-2xl text-slate-300 mb-3">
+
+                        District
+
+                    </label>
+
+                    <select
+                        id="district"
+                        name="district"
+
+                        class="w-full px-6 py-5 rounded-2xl bg-slate-900 text-white text-lg md:text-xl border border-slate-700"
+
+                        required>
+
+                        <option value="">Select District</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+
+                    class="w-full py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-xl md:text-2xl font-extrabold rounded-2xl transition duration-300 shadow-2xl hover:scale-[1.02]">
+
+                    Save Profile
+
+                </button>
+
+            </form>
 
         </div>
 
-        <!-- State -->
+    </div>
 
-        <div>
+    <!-- Dynamic District Logic -->
 
-            <label class="block text-2xl text-slate-300 mb-3">
-
-                State
-
-            </label>
-
-            <select
-                id="state"
-                name="state"
-
-                onchange="updateDistricts()"
-
-                class="w-full px-6 py-5 rounded-2xl bg-slate-900 text-white text-xl border border-slate-700"
-
-                required>
-<option value="">Select State / UT</option>
-
-<option value="Andaman and Nicobar Islands">
-    Andaman and Nicobar Islands
-</option>
-
-<option value="Andhra Pradesh">
-    Andhra Pradesh
-</option>
-
-<option value="Arunachal Pradesh">
-    Arunachal Pradesh
-</option>
-
-<option value="Assam">
-    Assam
-</option>
-
-<option value="Bihar">
-    Bihar
-</option>
-
-<option value="Chandigarh">
-    Chandigarh
-</option>
-
-<option value="Chhattisgarh">
-    Chhattisgarh
-</option>
-
-<option value="Dadra and Nagar Haveli and Daman and Diu">
-    Dadra and Nagar Haveli and Daman and Diu
-</option>
-
-<option value="Delhi">
-    Delhi
-</option>
-
-<option value="Goa">
-    Goa
-</option>
-
-<option value="Gujarat">
-    Gujarat
-</option>
-
-<option value="Haryana">
-    Haryana
-</option>
-
-<option value="Himachal Pradesh">
-    Himachal Pradesh
-</option>
-
-<option value="Jammu and Kashmir">
-    Jammu and Kashmir
-</option>
-
-<option value="Jharkhand">
-    Jharkhand
-</option>
-
-<option value="Karnataka">
-    Karnataka
-</option>
-
-<option value="Kerala">
-    Kerala
-</option>
-
-<option value="Ladakh">
-    Ladakh
-</option>
-
-<option value="Lakshadweep">
-    Lakshadweep
-</option>
-
-<option value="Madhya Pradesh">
-    Madhya Pradesh
-</option>
-
-<option value="Maharashtra">
-    Maharashtra
-</option>
-
-<option value="Manipur">
-    Manipur
-</option>
-
-<option value="Meghalaya">
-    Meghalaya
-</option>
-
-<option value="Mizoram">
-    Mizoram
-</option>
-
-<option value="Nagaland">
-    Nagaland
-</option>
-
-<option value="Odisha">
-    Odisha
-</option>
-
-<option value="Puducherry">
-    Puducherry
-</option>
-
-<option value="Punjab">
-    Punjab
-</option>
-
-<option value="Rajasthan">
-    Rajasthan
-</option>
-
-<option value="Sikkim">
-    Sikkim
-</option>
-
-<option value="Tamil Nadu">
-    Tamil Nadu
-</option>
-
-<option value="Telangana">
-    Telangana
-</option>
-
-<option value="Tripura">
-    Tripura
-</option>
-
-<option value="Uttar Pradesh">
-    Uttar Pradesh
-</option>
-
-<option value="Uttarakhand">
-    Uttarakhand
-</option>
-
-<option value="West Bengal">
-    West Bengal
-</option>
-
-            </select>
-
-        </div>
-
-        <!-- District -->
-
-        <div>
-
-            <label class="block text-2xl text-slate-300 mb-3">
-
-                District
-
-            </label>
-
-            <select
-                id="district"
-                name="district"
-
-                class="w-full px-6 py-5 rounded-2xl bg-slate-900 text-white text-xl border border-slate-700"
-
-                required>
-
-                <option value="">Select District</option>
-
-            </select>
-
-        </div>
-
-        <!-- Button -->
-
-        <button
-            type="submit"
-
-            class="w-full py-5 bg-yellow-400 hover:bg-yellow-300 text-black text-2xl font-extrabold rounded-2xl transition duration-300 shadow-2xl">
-
-            Save Profile
-
-        </button>
-
-    </form>
-
-</div>
-
-<!-- Dynamic District Logic -->
-
-<script>
+    <script>
 
 const districts = {
 
@@ -1159,66 +1175,75 @@ const districts = {
         "Yanam"
     ]
 
-};
 
-    function updateDistricts() {
+        };
 
-        const state = document.getElementById("state").value;
+        function updateDistricts() {
 
-        const districtSelect = document.getElementById("district");
+            const state =
+                document.getElementById("state").value;
 
-        districtSelect.innerHTML = "";
+            const districtSelect =
+                document.getElementById("district");
 
-        const defaultOption = document.createElement("option");
+            districtSelect.innerHTML = "";
 
-        defaultOption.text = "Select District";
+            const defaultOption =
+                document.createElement("option");
 
-        defaultOption.value = "";
+            defaultOption.text =
+                "Select District";
 
-        districtSelect.add(defaultOption);
+            defaultOption.value = "";
 
-        if (districts[state]) {
+            districtSelect.add(defaultOption);
 
-            districts[state].forEach(function(district) {
+            if (districts[state]) {
 
-                const option = document.createElement("option");
+                districts[state].forEach(function(district) {
 
-                option.text = district;
+                    const option =
+                        document.createElement("option");
 
-                option.value = district;
+                    option.text = district;
 
-                districtSelect.add(option);
+                    option.value = district;
 
-            });
+                    districtSelect.add(option);
+
+                });
+
+            }
 
         }
 
-    }
+    </script>
 
-</script>
-<footer class="mt-16 text-center text-slate-400 text-sm md:text-base pb-6">
+    <!-- Footer -->
 
-    <div class="border-t border-white/10 pt-6">
+    <footer class="text-center text-slate-400 text-sm md:text-base pb-6 px-4">
 
-        <p>
+        <div class="border-t border-white/10 pt-6">
 
-            © 2026 Abinav Balasubbiramaniam.
-            All rights reserved.
+            <p>
 
-        </p>
+                © 2026 Abinav Balasubbiramaniam.
+                All rights reserved.
 
-        <p class="mt-3 leading-relaxed max-w-4xl mx-auto px-4">
+            </p>
 
-            Animal images are dynamically sourced from publicly available
-            Wikimedia/Wikipedia resources for educational and gameplay purposes.
-            This website is an independent AI-powered game project and is not
-            affiliated with Wikimedia Foundation or any external organizations.
+            <p class="mt-3 leading-relaxed max-w-4xl mx-auto">
 
-        </p>
+                Animal images are dynamically sourced from publicly available
+                Wikimedia/Wikipedia resources for educational and gameplay purposes.
+                This website is an independent AI-powered game project and is not
+                affiliated with Wikimedia Foundation or any external organizations.
 
-    </div>
+            </p>
 
-</footer>
+        </div>
+
+    </footer>
 
 </body>
 

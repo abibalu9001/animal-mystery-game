@@ -21,8 +21,6 @@ urlpatterns = [
 
     path('logout/', views.logout_view),
 
-    path('verify-otp/', views.verify_otp_view),
-
     path('setup-profile/', views.setup_profile_view),
 
     path('monthly-rewards/',views.monthly_rewards_view),

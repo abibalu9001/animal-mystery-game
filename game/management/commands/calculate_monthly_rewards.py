@@ -112,30 +112,7 @@ class Command(BaseCommand):
 
             )
 
-            # send email
 
-            self.send_reward_email(
-
-                player=game.player,
-
-                reward_name="🥇 Monthly Champion",
-
-                month=month,
-
-                year=year,
-
-                details=f"""
-
-Animal: {game.animal}
-
-Difficulty: {game.level}
-
-Final Score: {game.score}%
-
-Questions Used: {game.questions_used}
-
-"""
-            )
 
         # =============================================
         # MOST ACTIVE PLAYER
@@ -194,24 +171,7 @@ Questions Used: {game.questions_used}
 
                 )
 
-            self.send_reward_email(
 
-                player=player,
-
-                reward_name="🔥 Most Active Player",
-
-                month=month,
-
-                year=year,
-
-                details=f"""
-
-Total Games Played: {max_games}
-
-Active Days: {len(days_active[player])}
-
-"""
-            )
 
         # =============================================
         # LOWEST AI COST
@@ -259,28 +219,7 @@ Active Days: {len(days_active[player])}
 
                 )
 
-            self.send_reward_email(
 
-                player=game.player,
-
-                reward_name="💎 Lowest AI Cost",
-
-                month=month,
-
-                year=year,
-
-                details=f"""
-
-Animal: {game.animal}
-
-Difficulty: {game.level}
-
-AI Cost: ₹{round(game.ai_cost,3)}
-
-Questions Used: {game.questions_used}
-
-"""
-            )
 
         self.stdout.write(
 
@@ -297,148 +236,3 @@ Questions Used: {game.questions_used}
     # EMAIL FUNCTION
     # =================================================
 
-    def send_reward_email(
-
-        self,
-
-        player,
-
-        reward_name,
-
-        month,
-
-        year,
-
-        details
-
-    ):
-
-        month_name = datetime(
-
-            year,
-
-            month,
-
-            1
-
-        ).strftime("%B %Y")
-
-        subject = f"{reward_name} - {month_name}"
-
-        from_email = settings.EMAIL_HOST_USER
-
-        to = [player.email]
-
-        text_content = (
-
-            f"Congratulations!\n\n"
-
-            f"You earned:\n"
-
-            f"{reward_name}\n\n"
-
-            f"{details}"
-
-        )
-
-        html_content = f"""
-
-<div style="
-    font-family: Arial;
-    background: #0f172a;
-    color: white;
-    padding: 40px;
-    border-radius: 20px;
-">
-
-    <h1 style="
-        color: #facc15;
-        text-align: center;
-        font-size: 42px;
-    ">
-
-        {reward_name}
-
-    </h1>
-
-    <p style="
-        font-size: 22px;
-        margin-top: 30px;
-        line-height: 1.8;
-    ">
-
-        Congratulations
-        <b>{player.username}</b>!
-
-    </p>
-
-    <p style="
-        font-size: 20px;
-        line-height: 1.8;
-    ">
-
-        You earned this achievement for:
-
-        <b>{month_name}</b>
-
-    </p>
-
-    <div style="
-        background: #1e293b;
-        padding: 30px;
-        border-radius: 18px;
-        margin-top: 30px;
-        line-height: 2;
-        font-size: 20px;
-    ">
-
-        {details.replace(chr(10), '<br>')}
-
-    </div>
-
-    <p style="
-        color: #cbd5e1;
-        font-size: 18px;
-        margin-top: 35px;
-    ">
-
-        Keep playing Animal Mystery
-        and continue your winning streak.
-
-    </p>
-
-    <p style="
-        text-align: center;
-        margin-top: 30px;
-        color: #64748b;
-    ">
-
-        🐾 Animal Mystery Team
-
-    </p>
-
-</div>
-
-"""
-
-        email_message = EmailMultiAlternatives(
-
-            subject,
-
-            text_content,
-
-            from_email,
-
-            to
-
-        )
-
-        email_message.attach_alternative(
-
-            html_content,
-
-            "text/html"
-
-        )
-
-        email_message.send()

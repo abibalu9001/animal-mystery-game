@@ -60,16 +60,13 @@ Jinja2==3.1.6
 jiter==0.11.0
 kiwisolver==1.4.9
 MarkupSafe==3.0.3
-matplotlib==3.10.8
 MouseInfo==0.1.3
 multidict==6.7.0
 mysql-connector==2.2.9
-numpy==2.2.6
 openai==1.108.0
 opencv-contrib-python==4.13.0.92
 opencv-python==4.12.0.88
 packaging==25.0
-pandas==3.0.1
 pdf2image==1.17.0
 pdfkit==1.0.0
 pefile==2023.2.7

@@ -128,15 +128,15 @@ WSGI_APPLICATION = 'animalsite.wsgi.application'
 # DATABASE
 # =====================================================
 
+import dj_database_url
+
 DATABASES = {
 
-    'default': {
+    'default': dj_database_url.config(
 
-        'ENGINE': 'django.db.backends.sqlite3',
+        default=os.getenv("DATABASE_URL")
 
-        'NAME': BASE_DIR / 'db.sqlite3',
-
-    }
+    )
 
 }
 

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-20+s*-2f9e8#a+&m0n)!%&%oia0fj@+qe7sy*_!+qad-7u2r0t
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -127,3 +128,5 @@ EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER").strip()
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD").strip()
 
 EMAIL_USE_TLS = True
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
